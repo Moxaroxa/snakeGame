@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
+    <title>MultiSnake</title>
+</head>
+<body>
+    <div class="board">
+        <div class="chats">
+            <div class="title">
+                <h1>LIVE CHAT</h1>
+            </div>
+
+            <div class="body" id="chat-body">
+                
+            </div>
+
+        </div>
+        <div class="type">
+            <input id="message" type="text" placeholder="Say something...">
+        </div>
+    </div>
+    <div id="startMenu">
+        <h2>Welcome to Snake!</h2>
+        <input type="text" id="playerName" placeholder="Enter your name" required>
+        <select id="snakeColor">
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="red">Red</option>
+          <option value="purple">Purple</option>
+          <option value="yellow">Yellow</option>
+        </select>
+        <button id="startButton">Start Game</button>
+      </div>
+
+
+
+
+    <canvas id="gamePlane" width="1000" height="560"></canvas>
+
+    <div id="leaderboard" style="position: absolute; top: 10px; right: 10px; border-radius: 8px; color: white;">
+        <h4 style="margin: 0; padding: 0; text-align: center;">Leaderboard</h4>
+        <div class="list" id="leader_list">
+            
+        </div>
+    </div>
+
+
+    <canvas id="marketCanvas" width="1200" height="700"></canvas>
+
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
