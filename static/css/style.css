@@ -1,0 +1,265 @@
+:root {
+    /* --green-c: #21eb21; */
+    --green-c : rgb(128, 128, 128);
+    --green-c2: #66ff66;
+}
+
+* {
+    padding: 0px;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+    height: 98vh;
+    background-color: #161A25;
+    transform: scale(.95);
+}
+
+
+canvas {
+    width: 80%;
+}
+
+#gamePlane {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(20, 20px); /* 20 cells per row, 20px each */
+    grid-template-rows: repeat(20, 20px); /* 20 cells per column, 20px each */
+    gap: 1px; /* Space between cells */
+    
+    background-color: transparent;
+
+     
+     /* The image used */
+    background-image: url("../img/bg.PNG");
+ 
+    height: 100%;
+ 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    box-shadow: rgb(6, 6, 6) 3px 3px 6px 0px inset, rgba(6, 6, 6, 0.5) -3px -3px 6px 1px inset;
+    position: relative;
+} 
+
+
+#leaderboard {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background: rgba(19, 19, 19, 0.342);
+    width: 200px;
+    padding: 20px;
+ 
+  }
+  
+#leaderboard h4 {
+    color: var(--green-c2);
+    text-transform: uppercase;
+}
+
+.list {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.list h2 {
+    font-size: 15px;
+    width: 100%;
+    height: 4vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.list h2 span:nth-child(1) {
+    width: 10px;
+    padding-right: 15px;
+    color: var(--green-c2);
+}
+
+.list h2 span:nth-child(2) {
+    padding-left: 10px;
+}
+
+
+
+  
+
+
+
+.cell {
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 1px solid #333;
+}
+
+.snake {
+background-color: #66ff66;
+transition: background-color 0.1s ease;
+}
+
+.apple {
+background-color: #ff6666;
+}
+
+
+
+#startMenu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--green-c);
+    color: var(--green-c);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    height: 300px;
+    display: block;  
+    opacity: 1; 
+    z-index: 10;
+    letter-spacing: 3px;
+}
+
+#startMenu input,
+#startMenu select {
+    width: 90%;
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: transparent;
+    border: 2px solid var(--green-c);
+    color: var(--green-c);
+    font-weight: 550;
+}
+
+#startMenu button {
+    background-color: var(--green-c);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#startMenu button:hover {
+    background-color: #218838;
+}
+
+
+.board {
+    width: 30%;
+    height: 100%;
+    border: 2px solid var(--green-c);
+    border-radius: 15px;
+}
+
+.board .chats {
+    width: 100%;
+    height: 87%;
+}
+
+.board .chats .title {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.board .chats .body {
+    width: 100%;
+    height: 85%;
+    padding: 15px;
+    overflow-y: scroll;
+}
+
+.board .chats .body h2 {
+    margin-top: 15px;
+    width: 85%;
+    min-height: 4vh;
+    height: fit-content;
+    border-radius: 15px;
+    font-size: 13px;
+    padding: 10px 15px;
+    color: var(--green-c);
+    word-break: break-all;
+    border: 1px solid var(--green-c);
+    transition: .4s all;
+}
+
+.board .chats .body h2:hover {
+    color: var(--green-c2);
+}
+
+
+
+
+::-webkit-scrollbar {
+    width: 3px;
+  }
+
+.board .chats .title h1 {
+    font-size: 20px;
+    color: var(--green-c);
+}
+
+.board .type {
+    width: 100%;
+    height: 13%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.board .type input::placeholder {
+    font-size: 12px;
+    color: var(--green-c2);
+}
+.board .type input {
+    width: 90%;
+    height: 6vh;
+    background: transparent;
+    padding: 0 10px;
+    border: none;
+    color: var(--green-c2);
+    border-radius: 15px;
+    border: 2px solid var(--green-c);
+    outline: none;
+    font-weight: 550;
+}
+
+#marketCanvas {
+    /* width: 100%;
+    height: 100vh; */
+    position: absolute;
+    box-shadow: rgb(6, 6, 6) 3px 3px 6px 0px inset, rgba(6, 6, 6, 0.5) -3px -3px 6px 1px inset;
+    
+    z-index: -1;
+    margin-top: 200vh;
+    background-image: url("../img/bg.PNG");
+ 
+    height: 100%;
+ 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
