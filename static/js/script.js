@@ -227,8 +227,6 @@ const floatingSpeed = 0.5;
 
 window.onload = function() {
     
-    socket.emit('connect', { name: playerName, color: snakeColor });
-    
     fetch('/get_all_messages')
         .then(response => response.json())
         .then(data => {
