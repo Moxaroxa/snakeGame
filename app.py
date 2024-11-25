@@ -192,7 +192,8 @@ def get_all_messages():
 def get_image_results():
     msg = get_all_messages()
     msg = [i[0] for i in get_all_messages()]
-
+    print("TELL YOU CELLED")
+    print("_____________________________________________")
     print("Successfully render the database")
     return jsonify({'messages': msg})
 
@@ -226,4 +227,4 @@ def save_candle_to_db(candle):
 
 if __name__ == '__main__':
     create_table_if_not_exists()
-    socketio.run(app, debug=True)
+    socketio.run(app, host="0.0.0.0",port=5000, debug=True)
